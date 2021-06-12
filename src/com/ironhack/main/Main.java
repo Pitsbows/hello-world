@@ -12,7 +12,6 @@ public class Main {
         float var1 = 10.5f;
         System.out.println(var1);
 
-:wq
 
         System.out.println(a + b);
         System.out.println(a - b);
