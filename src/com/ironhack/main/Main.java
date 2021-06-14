@@ -1,12 +1,18 @@
 package com.ironhack.main;
 
+import javax.crypto.spec.PSource;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        System.out.println("Goodbye World :(");
+        /*System.out.println("Goodbye World :(");
         int a = 10;
         int b = 5;
         float var1 = 10.5f;
@@ -61,6 +67,8 @@ public class Main {
 
         String result = (day <= 1 && day <= 5) ? "Weekday" : "Weekend";
         System.out.println("Today is " + result);
+        */
+
 
         //Ejercicio 1
         String productName = "";
@@ -141,6 +149,95 @@ public class Main {
             aux[k] = numbers[j];
         }
         System.out.println(Arrays.toString(aux));
+
+
+
+
+
+        /*
+
+        // Para leer información con el scanner
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Wellcome to this app");
+        System.out.println("Please introduce your name");
+
+        String name = scanner.nextLine();
+        System.out.println("Hello" + name);
+
+        int age;
+
+        do {
+            System.out.println("Please introduce your age");
+            age = scanner.nextInt();
+        } while(age < 0);
+
+        //Buena práctica: cerrar el scanner.
+
+        scanner.close();
+
+        if (age < 18){
+            System.err.println("Forbiddem access");
+        } else{
+            System.out.println("Access grated");
+        }
+
+
+        */
+
+
+        //Ejercicio 4 imprimir número de palabras que empiezan por vocal
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please introduce a sentence");
+        String sentence = scanner.nextLine();
+
+        String[] words = sentence.split(" ");
+
+        int count = 0;
+        for (i = 0; i<words.length; i++){
+            if(words[i].toUpperCase().startsWith("A") ||words[i].toUpperCase().startsWith("E")
+                    ||words[i].toUpperCase().startsWith("I")||words[i].toUpperCase().startsWith("O")
+                    ||words[i].toUpperCase().startsWith("U")){
+
+                count ++;
+
+            }
+            else{
+                System.out.println("Palabras que no empiezan por vocal");
+                System.err.println(words[i]);
+            }
+        }
+
+        System.out.println("Hay " + count + " palabras que empiezan por vocal");
+
+
+
+
+
+
+        //Para crear ficheros
+
+        FileWriter writer = new FileWriter("demo.txt", true); //si no ponemos append, nos reescribe siempre el archivo
+        writer.write("Hola mundo :D\n");
+        writer.write("Segunda linea\n");
+        writer.close();
+
+        File file = new File("demo.txt");
+        Scanner scannerReadFile = new Scanner(file);
+
+        while (scanner.hasNextLine()){
+            String line = scanner.nextLine();
+            System.out.println(line);
+        }
+
+        scanner.close();
+
+
+        //cambio
+
+
 
     }
 
